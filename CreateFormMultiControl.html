@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Login</title> 
+    </head>
+    <body>  
+        <div>
+        <label>Username</label>
+        <input type="text" id="username" name="username">       
+        <label id="lblerrorMessagename" style="color:red"></label>
+        <br><br> 
+        <label>mobile</label>
+        <input type="text" id="mobile" name="mobile">       
+        <label id="lblerrorMessagemobile" style="color:red"></label>
+
+        <br><br> 
+        <label>Gender </label>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>        
+        <label id="lblerrorMessagegender" style="color:red"></label>
+        <br><br>   
+        <button type="submit" id="loginButton">Create Account</button>   
+        
+        </div>
+
+    </body>
+    <script>
+            // write a button click event to get the value of username, mobile and gender and print in console
+            document.getElementById("loginButton").addEventListener("click", function(){    
+                let username = document.getElementById("username").value;
+                let mobile = document.getElementById("mobile").value;   
+                let gender = document.querySelector('input[name="gender"]:checked');
+                if(username =="")        
+                {
+                    document.getElementById("lblerrorMessagename").innerText = "Username is required";
+                }
+                else
+                {
+                    document.getElementById("lblerrorMessagename").innerText = "";
+                    console.log("Username: " + username);
+                }           
+                if (mobile == "")
+                {
+                    document.getElementById("lblerrorMessagemobile").innerText = "Mobile number is required";
+                }
+                else
+                {
+                   console.log("Mobile: " + mobile);
+                    document.getElementById("lblerrorMessagemobile").innerText = "";
+                }   
+                if (gender == null)
+                {
+                    document.getElementById("lblerrorMessagegender").innerText = "  Gender is required";
+                }
+                else
+                {       
+                    console.log("Gender: " + gender.value);
+                    document.getElementById("lblerrorMessagegender").innerText = "";                
+                }
+            });
+
+    </script>
+    
+</html>

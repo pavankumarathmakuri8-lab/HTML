@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Create Form</title> 
+    </head>
+    <body>
+        <div>
+        <label>First Name</label>
+        <input type="text" id="firstname" name="firstname"> 
+        <label id="lblerrorMessagefirstname" style="color:red"></label>
+        <br><br> 
+        <label>Last Name</label>
+        <input type="text" id="lastname" name="lastname">   
+        <label id="lblerrorMessagelastname" style="color:red"></label>
+        <br><br> 
+        <label>Email</label>
+        <input type="text" id="email" name="email"> 
+        <label id="lblerrorMessageemail" style="color:red"></label>
+        <br>    <br> 
+        <label>Phone Number</label>
+        <input type="text" id="phonenumber" name="phonenumber">
+        <label id="lblerrorMessagephonenumber" style="color:red"></label>
+        <br>    <br> 
+        <button type="submit" id="submitButton">Submit</button>
+
+        </div>
+        </body>
+
+        <script>
+            // write a button click event to get the value of firstname, lastname, email and phone number and print in console
+            document.getElementById("submitButton").addEventListener("click", function(){
+                let firstname = document.getElementById("firstname").value;
+                let lastname = document.getElementById("lastname").value;
+                let email = document.getElementById("email").value;
+                let phonenumber = document.getElementById("phonenumber").value;
+
+                if(firstname == "")
+                {
+                    document.getElementById("lblerrorMessagefirstname").innerText = "First Name is required";
+                }
+                else
+                {
+                    document.getElementById("lblerrorMessagefirstname").innerText = "";
+                    console.log("First Name: " + firstname);
+                }
+                if(lastname == "")
+                {
+                    document.getElementById("lblerrorMessagelastname").innerText = "Last Name is required";
+                }
+                else
+                {
+                    document.getElementById("lblerrorMessagelastname").innerText = "";
+                    console.log("Last Name: " + lastname);
+                }
+                if(email == "")
+                {
+                    document.getElementById("lblerrorMessageemail").innerText = "Email is required";
+                }
+                else
+                {
+                    document.getElementById("lblerrorMessageemail").innerText = "";
+                    console.log("Email: " + email);
+                }
+                if(phonenumber == "")
+                {
+                    document.getElementById("lblerrorMessagephonenumber").innerText = "Phone Number is required";
+                }
+                else
+                {
+                    document.getElementById("lblerrorMessagephonenumber").innerText = "";
+                    console.log("Phone Number: " + phonenumber);
+                }
+            }); 
+        </script>
+</html>
